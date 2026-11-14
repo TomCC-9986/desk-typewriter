@@ -49,9 +49,9 @@ npx wrangler deploy
 
 ## 创作者
 
-- **籽菜**：第一开发者
-- **汤姆CC**
-- **Claude**（Anthropic）
+1. **籽菜**（[@zizic04](https://github.com/zizic04)）：第一作者
+2. **Claude**（[Anthropic](https://www.anthropic.com)）
+3. **汤姆CC**（[@TomCC-9986](https://github.com/TomCC-9986)）
 
 ## 许可
 
@@ -63,4 +63,4 @@ npx wrangler deploy
 
 **Desk Typewriter** is a little vintage typewriter that lives in the corner of your screen. Type a note, send it, and it prints line by line from the top of your friend's screen. Mac & Windows, free to download at the link above.
 
-Made by **籽菜** (lead developer), **TomCC**, and **Claude** (Anthropic). Licensed under [CC BY-NC 4.0](LICENSE): remix and share freely with credit, no commercial use.
+Made by **籽菜** ([@zizic04](https://github.com/zizic04), lead author), **Claude** (Anthropic), and **TomCC** ([@TomCC-9986](https://github.com/TomCC-9986)). Licensed under [CC BY-NC 4.0](LICENSE): remix and share freely with credit, no commercial use.
