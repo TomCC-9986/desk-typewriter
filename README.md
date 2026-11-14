@@ -1,5 +1,7 @@
 # 桌面打字机 Desk Typewriter
 
+**中文** | [English](README.en.md)
+
 一台住在屏幕角落的老式打字机。敲一张纸条寄出去，它会在朋友的屏幕顶上一行一行打印出来。
 
 支持 Mac 和 Windows，免费下载：**https://typewriter.tomcc.workers.dev**
@@ -59,8 +61,3 @@ npx wrangler deploy
 
 下载页用到的字体（思源宋体、EB Garamond、IBM Plex Mono）是 SIL OFL 1.1 开源字体，许可证在 `download/assets/fonts/` 里。
 
----
-
-**Desk Typewriter** is a little vintage typewriter that lives in the corner of your screen. Type a note, send it, and it prints line by line from the top of your friend's screen. Mac & Windows, free to download at the link above.
-
-Made by **籽菜** ([@zizic04](https://github.com/zizic04)), **Claude** (Anthropic), and **TomCC** ([@TomCC-9986](https://github.com/TomCC-9986)). Licensed under [CC BY-NC 4.0](LICENSE): remix and share freely with credit, no commercial use.
