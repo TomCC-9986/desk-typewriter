@@ -1,0 +1,11 @@
+Use your image generation tool to create ONE image, then save the PNG into this directory as typewriter_mint.png (copy it from wherever the tool writes it). Do not write any code.
+
+Image: a photorealistic product render of an ORIGINAL 1950s–60s portable manual typewriter, perfectly straight-on FRONT view, eye level slightly above (about 15° down), perfectly left-right symmetrical, centred, the whole machine visible with margin around it.
+- Body: glossy pastel MINT GREEN enamel (approx #a9cdb4), soft rounded shoulders, subtle chrome trim line across the front.
+- Keys: four staggered rows of round cream/ivory keycaps with tiny dark printed letters (QWERTY), each on a thin chrome stem over a dark recessed keyboard well; a long cream space bar at the bottom; a small round key at each end of the rows.
+- Centre: the semicircular fan of thin metal type bars visible in the dark well under the carriage, with the type guide in the middle.
+- Carriage across the top: a long black rubber platen roller, a thin chrome paper bail bar with two small black rollers in front of it, chunky black ribbed platen knobs on both ends with small red-orange accents, chrome carriage-return lever on the LEFT.
+- NO paper in the machine, the paper slot above the platen is EMPTY.
+- NO brand name, NO logo, NO text anywhere on the body (leave a blank small chrome badge).
+- Background: plain pure white #FFFFFF, flat, NO floor, NO cast shadow on the background, NO reflection, NO vignette. Soft studio lighting from the top-left, crisp edges.
+- Landscape 3:2 aspect, as high resolution as possible.

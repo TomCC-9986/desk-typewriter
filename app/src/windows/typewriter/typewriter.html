@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; connect-src 'self' blob: data:; style-src 'self' 'unsafe-inline'" />
+  <link rel="stylesheet" href="../common.css" />
+  <link rel="stylesheet" href="typewriter.css" />
+</head>
+<body class="mini">
+  <div id="box">
+    <div id="view"></div>
+  </div>
+  <!-- state only: the visible recipient/status live on the 3D desk sign -->
+  <select id="to" hidden></select>
+  <div id="status" hidden></div>
+  <div id="menu"></div>
+  <div id="preedit"></div>
+  <textarea id="input" autocomplete="off" spellcheck="false" aria-label="打字"></textarea>
+  <script src="typewriter.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+/* full-screen transparent overlay; #box is the 860x980 stage (680 px machine frame + 300 px headroom), scaled down into a corner when parked */
+html, body { width: 100%; height: 100%; }
+#box {
+  position: absolute; left: var(--x, 0px); top: var(--y, 0px); width: 860px; height: 980px;
+  transform-origin: 50% 100%;
+  transition: left .55s cubic-bezier(.2, .85, .25, 1), top .55s cubic-bezier(.2, .85, .25, 1), transform .55s cubic-bezier(.2, .85, .25, 1);
+}
+body.mini #box { left: var(--mx, 0px); top: var(--my, 0px); transform: scale(.2); cursor: pointer; }
+body.dragging #box { transition: none; cursor: grabbing; }
+body.mini.dragging #box { transition: none; }
+#view, #view canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#view { -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 28px); }   /* only the very top: a long sheet fades out at the box edge instead of being cut */
+body.mini #view { -webkit-mask-image: linear-gradient(to bottom, transparent 0, transparent 54%, #000 63%); }   /* 34%/46% of the 680 px frame, below 300 px headroom */
+
+#preedit {
+  position: fixed; transform: translate(-50%, -100%); padding: 3px 9px; border-radius: 3px;
+  background: #efe3c6; color: #2c241b; font: 15px "Songti SC", "STSong", serif;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .3), inset 0 0 0 1px rgba(90, 70, 40, .25);
+  white-space: pre; pointer-events: none; opacity: 0; transition: opacity .12s;
+}
+#preedit.on { opacity: 1; }
+
+/* recipient menu that pops out of the desk sign: a little slip of aged paper */
+#menu {
+  position: fixed; display: none; min-width: 120px; padding: 6px 0;
+  /* same aged sheet as the sign and the paper; darkened to sit in the scene's light like the lit sign card */
+  background: linear-gradient(rgba(60, 50, 38, var(--menu-shade, .38)), rgba(60, 50, 38, var(--menu-shade, .38))), url(img/paper_aged.jpg) center / cover;
+  color: #2b2116;
+  font: 15px "Songti SC", "STSong", serif; letter-spacing: 1px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .35), inset 0 0 0 1px rgba(90, 70, 40, .25);
+  border-radius: 2px;
+}
+#menu.on { display: block; }
+#menu div { padding: 6px 16px; cursor: pointer; white-space: nowrap; }
+#menu div:hover { background: rgba(90, 60, 25, .12); }
+#menu div.cur::before { content: "✓ "; }
+
+#input { position: fixed; left: 0; top: 0; width: 2px; height: 22px; opacity: 0; border: 0; padding: 0; resize: none; caret-color: transparent; z-index: 9; }

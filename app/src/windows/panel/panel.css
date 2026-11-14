@@ -1,0 +1,68 @@
+:root {
+  color-scheme: light; /* keep the paper look in dark mode */
+  --paper: #efe3c6; --ink: #2b241b; --muted: #85775d; --rule: rgba(120, 96, 60, .22);
+  --dot: #a89670; --stamp: #7a2e22;
+  /* handwriting: 手札体 (Hannotate SC) ships with macOS; fall back to 翩翩体 / 行楷 / system */
+  --hand: "Hannotate SC", "HanziPen SC", "Xingkai SC", "Kaiti SC", serif;
+  --serif: var(--hand);
+  --type: var(--hand);
+}
+html { background: #e6d8b6; }
+body {
+  margin: 0; padding: 22px 28px 48px; color: var(--ink); font: 16px/1.7 var(--type);
+  min-height: 100vh; box-sizing: border-box;
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(255, 248, 228, .45), transparent 55%),
+    radial-gradient(ellipse at 100% 100%, rgba(150, 110, 55, .2), transparent 60%),
+    url(img/paper.jpg);              /* paper grain + fibres, no ruled lines */
+  background-size: auto, auto, 900px 900px;
+  box-shadow: inset 0 0 70px rgba(120, 80, 30, .25);
+  padding-left: 32px;
+}
+h1 { font: 700 22px var(--serif); letter-spacing: 2px; margin: 8px 0 4px; }
+h2 { font: 700 16px var(--serif); letter-spacing: 3px; margin: 26px 0 8px; display: flex; align-items: center; gap: 8px; }
+h2::after { content: ""; flex: 1; border-top: 1px solid var(--ink); opacity: .35; margin-left: 6px; }
+section { padding-bottom: 6px; }
+.muted { color: var(--muted); font-size: 12px; }
+.msg { min-height: 1.2em; font-size: 12px; color: var(--stamp); }
+input:not([type]), input[type=text], select {
+  padding: 3px 2px; border: 0; border-bottom: 1.5px solid var(--ink); border-radius: 0; outline: 0;
+  background: transparent; color: var(--ink); font: inherit; min-width: 0;
+}
+input:not([type]):focus, input[type=text]:focus, select:focus { border-bottom-color: var(--stamp); background: rgba(255, 250, 235, .35); }
+input::placeholder { color: #a39574; }
+input[type=range] { accent-color: var(--ink); }
+input[type=checkbox] { accent-color: var(--ink); }
+button {
+  padding: 2px 12px; border: 1.5px solid var(--ink); border-radius: 2px; background: transparent; color: var(--ink);
+  font: 600 13px var(--type); letter-spacing: 1px; cursor: pointer; transform: rotate(-1deg);
+  box-shadow: 0 0 0 1px rgba(43, 36, 27, .12) inset; opacity: .92;
+}
+button:nth-of-type(even) { transform: rotate(.8deg); }
+button:hover { opacity: 1; background: rgba(43, 36, 27, .08); }
+button:active { transform: translateY(1px) rotate(0); }
+button.primary { background: var(--ink); color: var(--paper); }
+button.primary:hover { background: #3b3125; }
+.row { display: flex; gap: 10px; align-items: center; margin: 8px 0; }
+.row input:not([type=checkbox]):not([type=range]) { flex: 1; }
+.code { display: flex; gap: 14px; align-items: center; margin: 6px 0; }
+.ticket {
+  border: 2px dashed var(--ink); padding: 6px 18px; background: rgba(255, 250, 232, .5);
+  transform: rotate(-.6deg); position: relative;
+}
+.ticket::before, .ticket::after { content: ""; position: absolute; top: 50%; width: 10px; height: 10px; border-radius: 50%; background: var(--paper); border: 2px dashed var(--ink); margin-top: -5px; }
+.ticket::before { left: -7px; clip-path: inset(0 0 0 50%); }
+.ticket::after { right: -7px; clip-path: inset(0 50% 0 0); }
+#code { font: 700 32px var(--hand); letter-spacing: 4px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #b9ad8c; }
+.dot.on { background: #5c8a52; }
+.list { list-style: none; margin: 0; padding: 0; }
+.list li { display: flex; gap: 8px; align-items: center; padding: 5px 0; border-top: 1px dotted var(--dot); }
+.list li:first-child { border-top: 0; }
+.list li .name { flex: 1; }
+.list li.wait { color: var(--muted); font-style: italic; }
+.list li .text { flex: 1; white-space: pre-wrap; font-family: var(--type); }
+.list li .when { color: var(--muted); font-size: 12px; }
+details summary { cursor: pointer; color: var(--muted); font-size: 12px; }
+#setup input { display: block; width: 100%; box-sizing: border-box; margin: 10px 0; }

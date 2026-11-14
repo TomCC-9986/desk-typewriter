@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline'" />
+  <title>桌面打字机</title>
+  <link rel="stylesheet" href="panel.css" />
+</head>
+<body>
+  <section id="setup" hidden>
+    <h1>给自己起个名字</h1>
+    <p class="muted">好友收到纸条时会看到这个名字。</p>
+    <input id="nickname" maxlength="16" placeholder="比如：小王" />
+    <details><summary>服务器地址</summary><input id="server" /></details>
+    <button id="registerBtn" class="primary">开始</button>
+    <button id="lanOnlyBtn">不联网，只在局域网里用</button>
+    <p id="setupMsg" class="msg"></p>
+  </section>
+
+  <main id="main" hidden>
+    <section id="me">
+      <h2>我的配对码 <span id="online" class="dot"></span></h2>
+      <div class="code"><div class="ticket"><span id="code"></span></div><button id="copy">复制</button></div>
+      <p class="muted">把这个码发给朋友，让他在「加好友」里输入。</p>
+    </section>
+
+    <section id="add">
+      <h2>加好友</h2>
+      <div class="row"><input id="friendCode" placeholder="输入对方的配对码，如 K7Q-29M" /><button id="addBtn" class="primary">发送请求</button></div>
+      <p id="addMsg" class="msg"></p>
+    </section>
+
+    <section id="nearbySec">
+      <h2>附近的打字机</h2>
+      <p class="muted">同一个 Wi-Fi 下、或者蓝牙够得着（约 10 米）的电脑，不联网也能互传纸条。你在附近显示为「<span id="lanName"></span>」。<span id="btState"></span></p>
+      <ul id="nearbyList" class="list"></ul>
+      <p id="nearbyMsg" class="msg"></p>
+    </section>
+
+    <section id="pendingSec">
+      <h2>等你同意</h2>
+      <ul id="pending" class="list"></ul>
+    </section>
+
+    <section id="friends">
+      <h2>好友</h2>
+      <ul id="outgoing" class="list"></ul>
+      <ul id="friendList" class="list"></ul>
+    </section>
+
+    <section id="blockedSec">
+      <h2>已拉黑</h2>
+      <ul id="blockedList" class="list"></ul>
+    </section>
+
+    <section id="settings">
+      <h2>设置</h2>
+      <label class="row">音量 <input id="volume" type="range" min="0" max="1" step="0.05" /></label>
+      <label class="row">打字音效 <select id="soundPack"></select> <button id="soundTry" type="button">试听</button></label>
+      <label class="row" id="ambientRow"><input id="ambient" type="checkbox" /> 打字时伴着环境声（自然声音效）</label>
+      <label class="row">出纸位置
+        <select id="feedPosition"><option value="left">左边</option><option value="center">中间</option><option value="right">右边</option></select>
+      </label>
+      <label class="row"><input id="lan" type="checkbox" /> 局域网模式（发现同一个 Wi-Fi 下附近的打字机）</label>
+      <label class="row"><input id="bluetooth" type="checkbox" /> 蓝牙（没有网络也能和身边的打字机互传）</label>
+      <label class="row"><input id="dnd" type="checkbox" /> 勿扰（来纸条只在菜单栏显示数字）</label>
+      <label class="row"><input id="openAtLogin" type="checkbox" /> 开机自动启动</label>
+      <label class="row">服务器 <input id="serverUrl" /></label>
+      <p class="muted">写纸条快捷键：<span id="shortcut"></span></p>
+    </section>
+
+    <section id="history">
+      <h2>历史纸条</h2>
+      <ul id="historyList" class="list"></ul>
+    </section>
+  </main>
+  <script src="panel.js"></script>
+</body>
+</html>

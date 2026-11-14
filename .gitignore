@@ -1,0 +1,24 @@
+node_modules/
+dist/
+release/
+.wrangler/
+*.log
+.DS_Store
+/server/node_modules
+app/assets-src/renders/
+app/assets-src/blender/model_v4_backup.py
+app/.electron-win/
+安装包/
+app/.electron-win/
+app/assets-src/blender/.pydeps/
+app/build/
+app/native/ble-win/bin/
+app/native/ble-win/obj/
+download/public/
+
+# not published: reference photos, dev renders, Blender scratch files, archives
+/refs/
+/renders/
+*.blend
+*.zip
+app/assets-src/codex_typewriter.log

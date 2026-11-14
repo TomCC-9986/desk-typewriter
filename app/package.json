@@ -1,0 +1,78 @@
+{
+  "name": "desk-typewriter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "桌面打字机",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "npm run build && electron .",
+    "dev:a": "npm run build && DESK_PROFILE=a electron .",
+    "dev:b": "DESK_PROFILE=b DESK_SHORTCUT=CommandOrControl+Alt+O electron .",
+    "test": "vitest run",
+    "typecheck": "tsc -p .",
+    "dist:mac": "DESK_RELEASE=1 npm run build && electron-builder --mac --arm64 --x64",
+    "dist:win": "DESK_RELEASE=1 npm run build && electron-builder --win --x64",
+    "build:ble-win": "cd native/ble-win && /usr/local/share/dotnet/dotnet publish -c Release -o ../../build/win",
+    "build:ble-mac": "sh native/ble/build.sh"
+  },
+  "build": {
+    "appId": "local.desk-typewriter",
+    "productName": "桌面打字机",
+    "files": [
+      "dist/**",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "extendInfo": {
+        "LSUIElement": true,
+        "NSBluetoothAlwaysUsageDescription": "用蓝牙和身边的桌面打字机互传纸条（不需要网络）。"
+      },
+      "extraResources": [
+        {
+          "from": "build/dt-ble",
+          "to": "dt-ble"
+        }
+      ],
+      "identity": "-",
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false,
+      "icon": "resources/icon.png"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "signAndEditExecutable": false,
+      "extraResources": [
+        {
+          "from": "build/win/dt-ble.exe",
+          "to": "dt-ble.exe"
+        }
+      ],
+      "icon": "resources/icon.png"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/three": "^0.170.0",
+    "electron": "^38.8.6",
+    "electron-builder": "^26.18.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^5.9.3",
+    "vitest": "~3.2.0"
+  },
+  "dependencies": {
+    "three": "^0.170.0"
+  }
+}

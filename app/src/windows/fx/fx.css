@@ -1,0 +1,6 @@
+.ball {
+  position: absolute; left: 0; top: 0; width: 58px; height: 58px;
+  background-color: #f2ebdc;
+  filter: drop-shadow(0 8px 10px rgba(30, 20, 8, .3));
+}
+.ball > div { position: absolute; inset: 0; }

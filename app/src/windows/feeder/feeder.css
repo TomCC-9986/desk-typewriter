@@ -1,0 +1,23 @@
+#root { position: absolute; inset: 0; }
+#root .paper {
+  top: 0;
+  height: min(calc(var(--rows, 0) * var(--line-h) + 36px + var(--extra, 0px)), calc(100vh - 40px));
+  transition: height .14s cubic-bezier(.3, 1.5, .6, 1);
+  transform-origin: top center;
+  cursor: grab;
+}
+#root .paper.feeding { cursor: default; }
+#root .paper.dragging { cursor: grabbing; transition: none; box-shadow: 0 22px 44px rgba(0, 0, 0, .25); }
+/* printer mouth the paper comes out of */
+#root .paper::before {
+  content: ""; position: absolute; top: -3px; left: -12px; right: -12px; height: 7px; border-radius: 0 0 5px 5px;
+  background: linear-gradient(#2a2623, #48423b);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+#root .paper.dragging::before, #root .paper.loose::before { display: none; }
+.actions { position: absolute; left: 0; right: 0; bottom: 10px; display: flex; gap: 10px; justify-content: center; }
+.actions button {
+  font: 14px var(--font); padding: 4px 16px; border: 1.5px solid var(--ink); background: transparent;
+  color: var(--ink); border-radius: 3px; cursor: pointer;
+}
+.actions button:first-child { background: var(--ink); color: var(--paper); }
