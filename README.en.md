@@ -57,6 +57,6 @@ The KV namespace id in `server/wrangler.toml` belongs to the original author's a
 
 ## License
 
-Code and art are licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) (Attribution-NonCommercial): you're welcome to remix, adapt and share it with credit, but **not for commercial use**. Full text in [LICENSE](LICENSE).
+[MIT License](LICENSE): free to use, modify and distribute, including commercially, as long as the copyright notice is kept.
 
 The fonts on the download page (Noto Serif SC, EB Garamond, IBM Plex Mono) are under the SIL Open Font License 1.1; their licenses are in `download/assets/fonts/`.

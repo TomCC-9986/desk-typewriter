@@ -57,7 +57,7 @@ npx wrangler deploy
 
 ## 许可
 
-代码和美术资源采用 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)（署名-非商业性使用）：欢迎二创、改编、分享，请注明出处，**不可用于商业用途**。全文见 [LICENSE](LICENSE)。
+[MIT 协议](LICENSE)：可以自由使用、修改、分发，商用也可以，只要保留原作者的版权声明。
 
 下载页用到的字体（思源宋体、EB Garamond、IBM Plex Mono）是 SIL OFL 1.1 开源字体，许可证在 `download/assets/fonts/` 里。
 
